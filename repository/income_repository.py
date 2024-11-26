@@ -23,7 +23,7 @@ class IncomeRepository:
             source: str,
             amount: int,
             category: IncomeCategory,
-            desc: str | None = None
+            desc: str | None
     ):
 
         data = self._read_data()

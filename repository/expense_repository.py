@@ -24,7 +24,7 @@ class ExpenseRepository:
             item: str,
             amount: int,
             category: ExpenseCategory,
-            desc: str | None = None
+            desc: str | None
     ):
 
         data = self._read_data()
