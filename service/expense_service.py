@@ -18,6 +18,7 @@ class ExpenseService:
             category: ExpenseCategory,
             desc: str | None = None
     ):
+
         self.expense_repository.add_expense(date, place, item, amount, category, desc)
 
     def get_expenses(self) -> list[Expense]:
