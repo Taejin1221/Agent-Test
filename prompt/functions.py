@@ -98,5 +98,17 @@ FUNCTIONS = [
                 "required": []
             }
         }
+    },
+{
+        "type": "function",
+        "function": {
+            "name": "get_balance",
+            "description": "잔액을 얻어오는 함수",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
     }
 ]
