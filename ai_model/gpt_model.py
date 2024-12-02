@@ -20,7 +20,7 @@ class GPTModel:
 
         return response.choices[0].message.content
 
-    def generate_action(self, prompt: str, tools: list[dict], user_message: str) -> dict:
+    def generate_action(self, prompt: str, tools: list[dict], user_message: str) -> list[dict]:
         messages = [
             {"role": "system", "content": prompt},
             {"role": "user", "content": user_message}
@@ -32,8 +32,11 @@ class GPTModel:
             tools=tools
         )
 
-        result = {
-            "function": response.choices[0].message.tool_calls[0].function.name,
-            "arguments": json.loads(response.choices[0].message.tool_calls[0].function.arguments)
-        }
+        result = []
+        for tool in response.choices[0].message.tool_calls:
+            result.append({
+                "function": tool.function.name,
+                "arguments": json.loads(tool.function.arguments)
+            })
+
         return result
