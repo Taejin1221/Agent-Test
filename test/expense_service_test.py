@@ -4,7 +4,7 @@ from repository.expense_repository import ExpenseRepository
 from schemas.enum.expense_category import ExpenseCategory
 from service.expense_service import ExpenseService
 
-expense_repository = ExpenseRepository("../repository/data.json")
+expense_repository = ExpenseRepository("repository/data.json")
 expense_service = ExpenseService(expense_repository)
 
 print("===== add test =====")

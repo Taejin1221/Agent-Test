@@ -4,7 +4,7 @@ from repository.income_repository import IncomeRepository
 from schemas.enum.income_category import IncomeCategory
 from service.income_service import IncomeService
 
-income_repository = IncomeRepository("../repository/data.json")
+income_repository = IncomeRepository("repository/data.json")
 income_service = IncomeService(income_repository)
 
 print("===== add test =====")

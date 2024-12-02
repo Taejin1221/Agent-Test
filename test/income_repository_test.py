@@ -3,7 +3,7 @@ from datetime import datetime
 from repository.income_repository import IncomeRepository
 from schemas.enum.income_category import IncomeCategory
 
-expenses_repository = IncomeRepository("../repository/data.json")
+expenses_repository = IncomeRepository("repository/data.json")
 
 print("===== add test =====")
 expenses_repository.add_income(
