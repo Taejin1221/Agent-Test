@@ -27,21 +27,21 @@ class IncomeRepository:
     ):
 
         data = self._read_data()
-        expense = {
+        income = {
             "date": date.strftime("%Y-%m-%d %H:%M:%S"),
             "source": source,
             "category": category.value,
             "amount": amount,
             "description": desc
         }
-        data["incomes"].append(expense)
+        data["incomes"].append(income)
         data["balances"] += amount
         self._write_data(data)
 
     def get_incomes(self) -> list[Income]:
         data = self._read_data()
-        expenses = data["incomes"]
+        incomes = data["incomes"]
 
-        result = [Income(**expense) for expense in expenses]
+        result = [Income(**income) for income in incomes]
 
         return result
