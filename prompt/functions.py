@@ -3,7 +3,7 @@ FUNCTIONS = [
         "type": "function",
         "function": {
             "name": "add_expense",
-            "description": "새로운 지출 내역을 저장소에 추가하는 함수입니다.",
+            "description": "새로운 지출 내역을 저장소에 추가하는 함수",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -31,7 +31,7 @@ FUNCTIONS = [
                     },
                     "desc": {
                         "type": "string",
-                        "description": "An optional description of the expense.",
+                        "description": "지출에 대한 추가적인 정보",
                         "nullable": True
                     }
                 },
@@ -79,7 +79,7 @@ FUNCTIONS = [
                     },
                     "desc": {
                         "type": "string",
-                        "description": "An optional description of the income.",
+                        "description": "수입에 대한 추가적인 정보",
                         "nullable": True
                     }
                 },
@@ -99,7 +99,7 @@ FUNCTIONS = [
             }
         }
     },
-{
+    {
         "type": "function",
         "function": {
             "name": "get_balance",
