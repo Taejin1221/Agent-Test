@@ -41,19 +41,23 @@ class ChatService:
                     self.income_service.add_income(
                         datetime.strptime(args["date"], "%Y-%m-%d %H:%M:%S"), args["source"], args["amount"], IncomeCategory(args["category"])
                     )
+
                     results.append(f'요청이 성공적으로 처리되었습니다. {"-".join([args["date"], args["source"], str(args["amount"]), args["category"]])}')
                 elif func == "get_expenses":
                     result = "[소비 내역]\n"
                     for idx, expense in enumerate(self.expense_service.get_expenses()):
                         result += f"{idx}: {expense.date}-{expense.place}-{expense.item}-{expense.amount}원-{expense.category}\n"
+
                     results.append(result)
                 elif func == "get_incomes":
                     result = "[수입 내역]\n"
                     for idx, income in enumerate(self.income_service.get_incomes()):
                         result += f"{idx}: {income.date}-{income.source}-{income.amount}원-{income.category}\n"
+
                     results.append(result)
                 else:
                     balance = self.balance_service.get_balance()
+
                     results.append(f"잔액은 {balance}원 입니다.")
 
             return "\n".join(results)
